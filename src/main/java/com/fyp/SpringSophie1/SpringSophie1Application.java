@@ -11,5 +11,5 @@ public class SpringSophie1Application {
 	}
 
 }
-/* code came from reference 1 of my list of references*/
+/* code from lines 1-9 came from reference "Java REST API with Spring Boot Tutorial | REST API CRUD Implementation" Youtube video created by ThinkCreative*/
 
