@@ -1,10 +1,23 @@
 package com.fyp.SpringSophie1.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
+@Entity
 public class Task {
-
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int taskID;
     private String taskName;
+
+    // Many tasks can be assigned to one employee
+    @ManyToOne
+    @JoinColumn(name = "staff_id", nullable = false) // staff_id is the foreign key in the Task table
+    private Employee assignedEmployee;
 
 
 
@@ -21,5 +34,7 @@ public class Task {
     public void setTaskID(int taskID) { this.taskID = taskID; }
     public String getTaskName() { return taskName; }
     public void setTaskName(String taskName) { this.taskName = taskName; }
+    public Employee getAssignedEmployee() { return assignedEmployee; }
+    public void setAssignedEmployee(Employee assignedEmployee) { this.assignedEmployee = assignedEmployee; }
 
 }
