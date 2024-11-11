@@ -6,9 +6,12 @@ import java.util.List;
 @Entity
 public class Employee {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int staffID;
+    // Mark the username as the primary key, and enforce uniqueness and non-null constraints
+    @Id
+    //@Column annotation acquired from ChatGPT - Query was how to enable username as the primary key for the database table?
+    @Column(unique = true, nullable = false) //allows for uniqueness for username and no duplicates
+    private String username;// Username is the primary key
+
     private String fName;
     private String sName;
     private String role;
@@ -23,8 +26,8 @@ public class Employee {
 
 
     //Parameterised Constructors
-    public Employee(int staffID, String fName, String sName, String role, String password) {
-        this.staffID = staffID;
+    public Employee(String username, String fName, String sName, String role, String password) {
+        this.username = username;
         this.fName = fName;
         this.sName = sName;
         this.role = role;
@@ -36,8 +39,8 @@ public class Employee {
     }
 
     // Getters and setters for all attributes
-    public int getStaffID() { return staffID; }
-    public void setStaffID(int staffID) { this.staffID = staffID; }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
     public String getfName() { return fName; }
     public void setfName(String fName) { this.fName = fName; }
     public String getsName() { return sName; }

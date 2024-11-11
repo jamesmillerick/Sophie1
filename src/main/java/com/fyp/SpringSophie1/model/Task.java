@@ -14,9 +14,8 @@ public class Task {
     private int taskID;
     private String taskName;
 
-    // Many tasks can be assigned to one employee
-    @ManyToOne
-    @JoinColumn(name = "staff_id", nullable = false) // staff_id is the foreign key in the Task table
+    @ManyToOne // Many tasks can be assigned to one employee
+    @JoinColumn(name = "username", nullable = false) // username is the foreign key in the Task table
     private Employee assignedEmployee;
 
 

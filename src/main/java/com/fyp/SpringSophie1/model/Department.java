@@ -1,13 +1,14 @@
 package com.fyp.SpringSophie1.model;
 
 public class Department {
-private String deptName;
-    private int staffID;
+    private String deptName;
+    private String username;
     private String fName;
     private String sName;
 
-    public Department(int staffID, String fName, String sName) {
-        this.staffID = staffID;
+    public Department(String deptName, String username, String fName, String sName) {
+        this.deptName = deptName;
+        this.username = username;
         this.fName = fName;
         this.sName = sName;
     }
@@ -26,12 +27,12 @@ private String deptName;
         this.deptName = deptName;
     }
 
-    public int getStaffID() {
-        return staffID;
+    public String getUsername() {
+        return username;
     }
 
-    public void setStaffID(int staffID) {
-        this.staffID = staffID;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getfName() {
